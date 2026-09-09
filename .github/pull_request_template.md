@@ -14,5 +14,6 @@ Closes #
 
 ## Checklist
 - [ ] I have manually tested the changes
+- [ ] I have created feature/unit tests, if applicable
 - [ ] I haven't left any debug code (dd, dump, console.log) 
-- [ ] Migrations run without errors from scratch (`migrate:fresh`), if applicable
+- [ ] Migrations run without errors from scratch, if applicable

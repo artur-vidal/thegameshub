@@ -2,7 +2,7 @@
 name: Feature
 about: New functionality or part of the system to be implemented
 title: ''
-labels: feature
+labels: enhancement
 assignees: ''
 ---
 
@@ -20,3 +20,4 @@ assignees: ''
 
 ## Technical Notes
 <!-- Migrations, architecture decisions, dependencies, etc. Optional. -->
+- 
