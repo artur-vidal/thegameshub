@@ -9,6 +9,10 @@ Route::get('/', function () {
 
 Route::controller(AuthController::class)
     ->group(function() {
+        Route::view('/login', 'auth.login');
+        
         Route::post('/login', 'login')->name('login');
         Route::get('/logout', 'logout')->name('logout');
+
+        Route::view('/admin', 'admin.home')->middleware('admin');
     });
