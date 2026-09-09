@@ -12,12 +12,12 @@ class AdminAuthTest extends TestCase
 {
     use RefreshDatabase;
 
-    protected static $userPassword = 'admin';
+    protected static $userPassword = 'senha';
 
     #[Test]
     public function user_can_login(): void
     {
-        $user = $this->createUser();
+        $user = User::factory()->create();
 
         $res = $this->post('/login', [
             'username' => $user->username,
@@ -30,7 +30,7 @@ class AdminAuthTest extends TestCase
 
     #[Test]
     public function user_cant_login_with_wrong_password(): void {
-        $user = $this->createUser();
+        $user = User::factory()->create();
 
         $res = $this->post('/login', [
             'username' => $user->username,
@@ -42,7 +42,7 @@ class AdminAuthTest extends TestCase
 
     #[Test]
     public function user_can_logout(): void {
-        $user = $this->createUser();
+        $user = User::factory()->create();
 
         $this->post('/login', [
             'username' => $user->username,
@@ -58,7 +58,7 @@ class AdminAuthTest extends TestCase
 
     #[Test]
     public function logout_redirects_to_login_form(): void {
-        $user = $this->createUser();
+        $user = User::factory()->create();
 
         $this->post('/login', [
             'username' => $user->username,
@@ -78,7 +78,7 @@ class AdminAuthTest extends TestCase
 
     #[Test]
     public function admin_can_access_admin_panel(): void {
-        $user = $this->createUser();
+        $user = User::factory()->administrator()->create();
         $user->update(['admin' => true]);
 
         $this->post('/login', [
@@ -92,7 +92,7 @@ class AdminAuthTest extends TestCase
 
     #[Test]
     public function common_user_cant_access_admin_panel(): void {
-        $user = $this->createUser();
+        $user = User::factory()->create();
 
         $this->post('/login', [
             'username' => $user->username,
@@ -101,13 +101,5 @@ class AdminAuthTest extends TestCase
 
         $res = $this->get('/admin');
         $res->assertForbidden();
-    }
-
-    protected function createUser(): User {
-        return User::create([
-            'name' => 'Administrador',
-            'username' => 'admin',
-            'password' => static::$userPassword
-        ]);
     }
 }
