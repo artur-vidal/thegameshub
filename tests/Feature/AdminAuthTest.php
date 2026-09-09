@@ -12,7 +12,7 @@ class AdminAuthTest extends TestCase
 {
     use RefreshDatabase;
 
-    protected static $userPassword = 'admin';
+    protected static $userPassword = 'senha';
 
     #[Test]
     public function user_can_login(): void
