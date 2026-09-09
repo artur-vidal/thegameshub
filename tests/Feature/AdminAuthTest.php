@@ -20,7 +20,7 @@ class AdminAuthTest extends TestCase
         $user = User::factory()->create();
 
         $res = $this->post('/login', [
-            'username' => $user->username,
+            'login-field' => $user->username,
             'password' => static::$userPassword
         ]);
 
@@ -33,7 +33,7 @@ class AdminAuthTest extends TestCase
         $user = User::factory()->create();
 
         $res = $this->post('/login', [
-            'username' => $user->username,
+            'login-field' => $user->username,
             'password' => 'senhaerrada'
         ]);
 
@@ -45,7 +45,7 @@ class AdminAuthTest extends TestCase
         $user = User::factory()->create();
 
         $this->post('/login', [
-            'username' => $user->username,
+            'login-field' => $user->username,
             'password' => static::$userPassword
         ]);
 
@@ -82,7 +82,7 @@ class AdminAuthTest extends TestCase
         $user->update(['admin' => true]);
 
         $this->post('/login', [
-            'username' => $user->username,
+            'login-field' => $user->username,
             'password' => static::$userPassword
         ]);
 
