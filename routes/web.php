@@ -22,6 +22,7 @@ Route::controller(UserController::class)
     ->name('user.')
     ->group(function() {
 
-        Route::post('/register', 'register')->name('register');
+        Route::view('/register', 'user.register')->name('show-register');
+        Route::post('/register', 'register')->name('store');
 
     });
