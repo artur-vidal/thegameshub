@@ -14,7 +14,7 @@ class AuthController extends Controller
             return back()->withErrors('Credenciais inválidas.');
         }
 
-        return view('admin.home');
+        return redirect('/admin');
     }
 
     public function logout() {
