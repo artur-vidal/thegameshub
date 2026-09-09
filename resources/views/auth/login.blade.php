@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ config('app.name') }} - Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+
+    <form action="{{ route('login') }}" method="post">
+        @csrf
+
+        <div>
+            <label for="username"> Nome de Usuário </label>
+            <input type="text" name="username" id="username">
+        </div>
+
+        <div>
+            <label for="password"> Senha </label>
+            <input type="password" name="password" id="password">
+        </div>
+
+        <button> Entrar </button>
+    </form>
+</body>
+</html>
