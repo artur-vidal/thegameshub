@@ -9,8 +9,14 @@ class AuthController extends Controller
 {
     public function login(LoginRequest $request) {
         $data = $request->validated();
+        $loginFieldName = filter_var($data['login-field'], FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
 
-        if(!Auth::attempt($data)) {
+        $credentials = [
+            $loginFieldName => $data['login-field'],
+            'password' => $data['password']
+        ];
+
+        if(!Auth::attempt($credentials)) {
             return back()->withErrors('Credenciais inválidas.');
         }
 
