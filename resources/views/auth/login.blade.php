@@ -17,8 +17,8 @@
         @csrf
 
         <div>
-            <label for="username"> Nome de Usuário </label>
-            <input type="text" name="username" id="username">
+            <label for="login-field"> Nome de Usuário ou Email </label>
+            <input type="text" name="login-field" id="login-field">
         </div>
 
         <div>
