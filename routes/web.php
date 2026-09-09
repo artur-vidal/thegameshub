@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -15,4 +16,12 @@ Route::controller(AuthController::class)
         Route::get('/logout', 'logout')->name('logout');
 
         Route::view('/admin', 'admin.home')->middleware('admin');
+    });
+
+Route::controller(UserController::class)
+    ->name('user.')
+    ->group(function() {
+
+        Route::post('/register', 'register')->name('register');
+
     });
