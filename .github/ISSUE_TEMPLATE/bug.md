@@ -1,20 +1,20 @@
 ---
 name: Bug
-about: Algo que deveria funcionar e não está funcionando
+about: Something that should work but isn't
 title: ''
 labels: bug
 assignees: ''
 ---
 
-## Comportamento esperado
+## Expected Behavior
 
 
-## Comportamento atual
+## Actual Behavior
 
 
-## Passos para reproduzir
+## Steps to Reproduce
 1. 
 2. 
 
-## Notas
-<!-- Contexto extra, prints, mensagens de erro, etc. Opcional. -->
+## Notes
+<!-- Extra context, screenshots, error messages, etc. Optional. -->

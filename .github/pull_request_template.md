@@ -1,18 +1,18 @@
-## Resumo
-<!-- O que esse PR faz, em uma ou duas frases -->
+## Summary
+<!-- What this PR does, in one or two sentences -->
 
-## Issue relacionada
+## Related Issue
 Closes #
 
-## O que foi feito
-<!-- Lista objetiva das mudanças -->
+## What was done
+<!-- Objective list of changes -->
 - 
 
-## Como testar
-<!-- Passos para verificar que funciona: rotas, comandos, seeds necessários, etc. -->
+## How to test
+<!-- Steps to verify it works: routes, commands, required seeds, etc. -->
 1. 
 
 ## Checklist
-- [ ] Testei manualmente as mudanças
-- [ ] Não deixei código de debug (dd, dump, console.log) 
-- [ ] Migrations rodam sem erro do zero (`migrate:fresh`), se aplicável
+- [ ] I have manually tested the changes
+- [ ] I haven't left any debug code (dd, dump, console.log) 
+- [ ] Migrations run without errors from scratch (`migrate:fresh`), if applicable

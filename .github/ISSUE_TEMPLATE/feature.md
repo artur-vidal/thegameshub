@@ -1,22 +1,22 @@
 ---
 name: Feature
-about: Nova funcionalidade ou parte do sistema a ser implementada
+about: New functionality or part of the system to be implemented
 title: ''
 labels: feature
 assignees: ''
 ---
 
-## Objetivo
-<!-- O que essa funcionalidade deve permitir? Uma ou duas frases. -->
+## Goal
+<!-- What should this functionality allow? One or two sentences. -->
 
-## Escopo
-<!-- Checklist do que entra nessa issue. Mantenha fechado e específico. -->
+## Scope
+<!-- Checklist of what is included in this issue. Keep it focused and specific. -->
 - [ ] 
 - [ ] 
 
-## Fora de escopo
-<!-- O que fica para issues futuras, pra evitar que essa cresça demais -->
+## Out of Scope
+<!-- What is left for future issues, to prevent this one from growing too much -->
 - 
 
-## Notas técnicas
-<!-- Migrations, decisões de arquitetura, dependências, etc. Opcional. -->
+## Technical Notes
+<!-- Migrations, architecture decisions, dependencies, etc. Optional. -->
