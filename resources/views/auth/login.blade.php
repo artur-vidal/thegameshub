@@ -7,6 +7,10 @@
     <title>{{ config('app.name') }} - Login</title>
 </head>
 <body>
+    @foreach ($errors->all() as $error)
+        <p style="border: 1px solid red; padding: .5rem;">{{ $error }}</p>
+    @endforeach
+
     <h1>Login</h1>
 
     <form action="{{ route('login') }}" method="post">
