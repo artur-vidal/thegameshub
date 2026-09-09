@@ -29,6 +29,20 @@ class AdminAuthTest extends TestCase
     }
 
     #[Test]
+    public function user_can_login_with_email(): void
+    {
+        $user = User::factory()->create();
+
+        $res = $this->post('/login', [
+            'login-field' => $user->email,
+            'password' => static::$userPassword
+        ]);
+
+        $res->assertRedirect('/admin');
+        $this->assertAuthenticatedAs($user);
+    }
+
+    #[Test]
     public function user_cant_login_with_wrong_password(): void {
         $user = User::factory()->create();
 
