@@ -38,7 +38,7 @@
 
         <div>
             <label for="password_confirmation"> Confirmar Senha </label>
-            <input type="password_confirmation" name="password_confirmation" id="password_confirmation">
+            <input type="password" name="password_confirmation" id="password_confirmation">
         </div>
 
         <button> Registre-se </button>
