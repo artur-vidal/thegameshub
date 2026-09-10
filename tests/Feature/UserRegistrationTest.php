@@ -54,12 +54,13 @@ class UserRegistrationTest extends TestCase
         $this->assertAuthenticatedAs($user);
     }
 
-    protected function registerUser(): TestResponse {
+    protected function registerUser(bool $confirmed = true): TestResponse {
         return $this->post('/register', [
             'name' => 'Teste Gamer',
             'username' => 'testegamer123',
             'email' => 'teste.gamer123@email.com',
-            'password' => 'senha'
+            'password' => 'senha',
+            'password_confirmation' => $confirmed ? 'senha' : ''
         ]);
     }
 
