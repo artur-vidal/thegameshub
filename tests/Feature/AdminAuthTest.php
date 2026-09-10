@@ -75,9 +75,11 @@ class AdminAuthTest extends TestCase
         $user = User::factory()->create();
 
         $this->post('/login', [
-            'username' => $user->username,
+            'login-field' => $user->username,
             'password' => static::$userPassword
         ]);
+
+        $this->assertAuthenticatedAs($user);
 
         $res = $this->get('/logout');
 
@@ -95,10 +97,14 @@ class AdminAuthTest extends TestCase
         $user = User::factory()->administrator()->create();
         $user->update(['admin' => true]);
 
+        
         $this->post('/login', [
             'login-field' => $user->username,
             'password' => static::$userPassword
-        ]);
+            ]);
+            
+        $this->assertAuthenticatedAs($user);
+        $this->assertTrue($user->admin == true);
 
         $res = $this->get('/admin');
         $res->assertOk();
@@ -109,9 +115,11 @@ class AdminAuthTest extends TestCase
         $user = User::factory()->create();
 
         $this->post('/login', [
-            'username' => $user->username,
+            'login-field' => $user->username,
             'password' => static::$userPassword
         ]);
+            
+        $this->assertAuthenticatedAs($user);
 
         $res = $this->get('/admin');
         $res->assertForbidden();
