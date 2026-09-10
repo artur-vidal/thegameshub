@@ -54,16 +54,24 @@ class UserRegistrationTest extends TestCase
         $this->assertAuthenticatedAs($user);
     }
 
-    protected function registerUser(): TestResponse {
+    #[Test]
+    public function user_cant_register_without_password_confirmation(): void {
+        $this->registerUser(false);
+        $user = $this->findUser();
+        $this->assertNull($user);
+    }
+
+    protected function registerUser(bool $confirmed = true): TestResponse {
         return $this->post('/register', [
             'name' => 'Teste Gamer',
             'username' => 'testegamer123',
             'email' => 'teste.gamer123@email.com',
-            'password' => 'senha'
+            'password' => 'senha',
+            'password_confirmation' => $confirmed ? 'senha' : ''
         ]);
     }
 
-    protected function findUser(): User {
+    protected function findUser(): ?User {
         return User::firstWhere('email', 'teste.gamer123@email.com');
     }
 }
