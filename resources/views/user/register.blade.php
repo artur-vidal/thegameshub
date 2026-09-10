@@ -36,6 +36,11 @@
             <input type="password" name="password" id="password">
         </div>
 
+        <div>
+            <label for="password_confirmation"> Confirmar Senha </label>
+            <input type="password_confirmation" name="password_confirmation" id="password_confirmation">
+        </div>
+
         <button> Registre-se </button>
     </form>
 </body>
