@@ -18,6 +18,6 @@ assignees: ''
 <!-- What is left for future issues, to prevent this one from growing too much -->
 - 
 
-## Technical Notes
-<!-- Migrations, architecture decisions, dependencies, etc. Optional. -->
+## Notes
+<!-- Observations to be made regarding this or future issues. Optional. -->
 - 
