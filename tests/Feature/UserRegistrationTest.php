@@ -31,7 +31,7 @@ class UserRegistrationTest extends TestCase
         $user = $this->findUser();
 
         $this->post('/login', [
-            'username' => $user->username,
+            'login-field' => $user->username,
             'password' => 'senha'
         ]);
 
@@ -44,7 +44,7 @@ class UserRegistrationTest extends TestCase
         $user = $this->findUser();
 
         $this->post('/login', [
-            'username' => $user->username,
+            'login-field' => $user->username,
             'password' => 'senha'
         ]);
 
